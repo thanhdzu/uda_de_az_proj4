@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "nycpayroll-thanh-df"
+		},
+		"AzureDLGen2_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDB_connectionString": {
+			"value": ""
+		},
+		"AzureSynapse_connectionString": {
+			"value": ""
+		},
+		"AzureDLGen2_properties_typeProperties_url": {
+			"value": "https://payrollthanhstorage.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
