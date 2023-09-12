@@ -1,0 +1,9 @@
+{
+	"name": "nycpayroll-thanh-df",
+	"location": "koreacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "11a81e36-57d1-4444-bc09-54d265c9fef4",
+		"tenantId": "f01e930a-b52e-42b1-b70f-a8882b5d043b"
+	}
+}
