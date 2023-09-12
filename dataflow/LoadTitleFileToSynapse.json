@@ -9,7 +9,8 @@
 						"referenceName": "AzureBlobTitleMaster",
 						"type": "DatasetReference"
 					},
-					"name": "sourcedstitle"
+					"name": "SourceTittle",
+					"description": "SourceTittle"
 				}
 			],
 			"sinks": [
@@ -18,7 +19,8 @@
 						"referenceName": "AzureSqlDWTitle",
 						"type": "DatasetReference"
 					},
-					"name": "sinksynapsetitle"
+					"name": "SinkTittle",
+					"description": "Sink_dbo.Tittle"
 				}
 			],
 			"transformations": [],
@@ -27,11 +29,12 @@
 				"          TitleCode as string,",
 				"          TitleDescription as string",
 				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> sourcedstitle",
-				"sourcedstitle sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
+				"     allowSchemaDrift: false,",
+				"     validateSchema: true,",
+				"     limit: 100,",
+				"     ignoreNoFilesFound: false) ~> SourceTittle",
+				"SourceTittle sink(allowSchemaDrift: false,",
+				"     validateSchema: true,",
 				"     input(",
 				"          TitleCode as string,",
 				"          TitleDescription as string",
@@ -42,13 +45,8 @@
 				"     upsertable:false,",
 				"     format: 'table',",
 				"     staged: true,",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError',",
-				"     mapColumn(",
-				"          TitleCode,",
-				"          TitleDescription",
-				"     )) ~> sinksynapsetitle"
+				"     allowCopyCommand: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> SinkTittle"
 			]
 		}
 	}
