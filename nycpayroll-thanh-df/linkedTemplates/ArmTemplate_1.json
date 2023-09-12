@@ -381,8 +381,8 @@
 								"type": "DataFlowReference",
 								"parameters": {},
 								"datasetParameters": {
-									"sourcedstitle": {},
-									"sinksynapsetitle": {}
+									"SourceTittle": {},
+									"SinkTittle": {}
 								}
 							},
 							"staging": {
